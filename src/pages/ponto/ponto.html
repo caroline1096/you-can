@@ -1,0 +1,54 @@
+<ion-header  class="cabecalho"  style="background-color:#488aff">
+  <ion-buttons end>
+    <button menuToggle class="icone">
+      <ion-icon name="menu"  class="icon" ></ion-icon>
+    </button>
+    <ion-title text-left >
+      <ion-icon name="md-pin"></ion-icon>
+      Pontos
+    </ion-title>
+  </ion-buttons>
+</ion-header>
+
+<ion-content class="texto">Cadastre somente pontos reais!</ion-content>
+<ion-content style="margin-top:10%">
+  <ion-item padding-horizontal>
+    <ion-label floating>Nome do Local</ion-label>
+    <ion-input type="text" [(ngModel)]="ponto.itemLocal" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Data</ion-label>
+    <ion-datetime displayFormat="MM/DD/YYYY"  [(ngModel)]="ponto.itemData"></ion-datetime>
+  </ion-item>
+  <ion-item padding-horizontal>
+    <ion-label>Tipo de Local</ion-label>
+    <ion-select [(ngModel)]="ponto.itemTipo">
+      <ion-option value="1">Acessivel</ion-option>
+      <ion-option value="2">Não Acessivel</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item padding-horizontal>
+    <ion-label floating>Descrição</ion-label>
+    <ion-input type="text"    name="nome"  [(ngModel)]="ponto.itemDesc" ></ion-input>
+  </ion-item>
+  
+  <div class="teste" padding-horizontal>
+    <img src="{{ponto.itemImg}}">
+    <button  ion-button icon-left block  (click)="getPosiscaoAtual()">
+      <ion-icon name="md-locate"></ion-icon>
+      Adicionar ponto
+    </button>
+
+    <button ion-button icon-left block (click)="abreCamera()">
+      <ion-icon name="md-images"></ion-icon>
+      Adicionar foto
+    </button>
+
+    <button ion-button block (click)="salvar()" type="submit"  ng-disabled="myForm.$invalid">
+      Salvar
+    </button>
+  </div>
+
+</ion-content>
+<ion-header  class="rodape" style="background-color:#488aff">You can </ion-header>

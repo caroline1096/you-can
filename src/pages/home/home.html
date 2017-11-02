@@ -1,0 +1,21 @@
+<ion-header  class="cabecalho" style="background-color:#488aff">
+  <ion-grid>
+    <ion-row>
+      <button  menuToggle class="icone">
+        <ion-icon class="icon" name="menu"></ion-icon>
+      </button>
+      <ion-title>Gerenciamento de rotas</ion-title>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+<ion-content>
+  <agm-map [latitude]="latitude" [longitude]="longitude" >
+    <agm-marker *ngFor="let item of listaItem | async"
+                [latitude]="item.itemLat"
+                [longitude]="item.itemLog"
+                (markerClick)="clickedMarker(Ponto)"
+                [openInfoWindow]="false"></agm-marker>
+  </agm-map>
+</ion-content>
+<ion-header  class="rodape" style="background-color:#488aff">You can </ion-header>

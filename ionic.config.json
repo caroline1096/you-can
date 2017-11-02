@@ -1,0 +1,8 @@
+{
+  "name": "tccmapa",
+  "app_id": "9771c53d",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

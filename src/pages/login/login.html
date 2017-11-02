@@ -1,0 +1,18 @@
+<ion-content >
+  <h1 align="center">You can</h1>
+  <ion-list>
+    <ion-item class="item-input">
+        <ion-label floating>E-mail</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.email"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item class="item-input">
+        <ion-label floating>Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="usuario.password"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button icon-left block (click)="login(usuario)">Login</button>
+  <button ion-button  icon-left block  (click)="cadastro(usuario)">Cadastrar</button>
+ <p>Não tem cadastro? Digite um e-mail valido e uma senha com 6 carateres e clique em cadastrar</p>
+</ion-content>
