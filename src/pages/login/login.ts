@@ -27,10 +27,10 @@ export class LoginPage {
       const result = await this.afAuth.auth.signInWithEmailAndPassword(usuario.email, usuario.password);
       if (result) {
         this.navCtrl.setRoot(HomePage);
-      }  
+      }
     }
     catch (e) {
-     
+
         let alert = this.alertCtrl.create({
           title: 'E-mail inválido',
           subTitle: 'É necessário digitar um e-mail válido. Caso ainda não seja cadastrado digite o e-mail e senha e clique em cadastrar',
@@ -39,8 +39,8 @@ export class LoginPage {
         alert.present();
       }
     }
-  
- 
+
+
   async cadastro (usuario: Usuario) {
     try {
       const result = await this.afAuth.auth.createUserWithEmailAndPassword(
@@ -58,7 +58,7 @@ export class LoginPage {
       });
       alert.present();
     }
-    }
   }
+}
 
 

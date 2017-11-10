@@ -4,20 +4,18 @@
         <ion-icon name="menu"  class="icon" ></ion-icon>
       </button>
       <ion-title text-left>
-          <ion-icon name="md-clipboard"></ion-icon>
-          
-        Relatório
+          <ion-icon name="md-clipboard"></ion-icon>Relatório
       </ion-title>
     </ion-buttons>
 </ion-header>
 
 
 <ion-content>
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-    
-  
+  <ion-searchbar (ionInput)="searchFn($event)"></ion-searchbar>
 
-    <ion-card *ngFor="let  item of listaItem  | async">
+
+
+    <ion-card *ngFor="let item of listaItem | async | search:term ">
         <ion-item>
             <ion-avatar item-start>
               <h2>{{item.itemImg}}</h2>
@@ -25,33 +23,20 @@
             <ion-icon name="md-pin" item-left large ></ion-icon>
             <h2> {{item.itemLocal}}</h2>
           </ion-item>
-        
-          
+
+
           <ion-item>
             <ion-icon name="wine" item-left large ></ion-icon>
-            <h2>Tipo: {{item.itemTipo}}</h2>
+            <h2>Tipo: {{item.itemTipo | tipoPonto }}</h2>
             <p>{{item.itemDesc}}</p>
           </ion-item>
 
           <ion-item>
               <span item-left>{{item.itemData}}</span>
-              <button ion-button icon-left clear item-end>
+              <button (click)="visualizar(item)"  ion-button icon-left clear item-end>
                 <ion-icon name="navigate"></ion-icon>
-                ir para 
+                Visualizar
               </button>
             </ion-item>
     </ion-card>
-
-
-
-
-
-    <!--<ion-list>
-      <ion-item *ngFor="let  item of listaItem  | async">
-          <h2>Nome do Local: {{item.itemLocal}}</h2>
-          <h2>Tipo: {{item.itemTipo}}</h2>
-          <h2>{{item.itemImg}}</h2>
-          
-      </ion-item>
-    </ion-list>-->
   </ion-content>

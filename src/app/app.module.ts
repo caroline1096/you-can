@@ -17,6 +17,10 @@ import {AngularFireDatabase, AngularFireDatabaseModule} from 'angularfire2/datab
 import { FIREBASE_CREDENTIALS } from './firebase.credentials';
 import {GOOGLE_MAPS_API} from "./google-maps-api.credentials";
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import {FormsModule} from "@angular/forms";
+import {SearchPipe} from "../pipes/search/search";
+import {TipoPontoPipe} from "../pipes/tipo-ponto/tipo-ponto";
+import {AgmJsMarkerClustererModule, ClusterManager} from "@agm/js-marker-clusterer";
 
 
 @NgModule({
@@ -27,6 +31,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     PontoPage,
     RelatorioPage,
     SobrePage,
+    SearchPipe,
+    TipoPontoPipe
   ],
   imports: [
     BrowserModule,
@@ -35,6 +41,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     AngularFireModule.initializeApp(FIREBASE_CREDENTIALS),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    FormsModule,
+    AgmJsMarkerClustererModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -51,6 +59,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     Camera,
     AngularFireDatabase,
     Geolocation,
+    ClusterManager,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
 
   ]
