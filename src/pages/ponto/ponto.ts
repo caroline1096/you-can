@@ -7,6 +7,8 @@ import {AngularFireDatabase} from "angularfire2/database";
 import {Ponto} from "../../models/ponto.model";
 import {HomePage} from "../home/home";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {ImageProvider} from "../../providers/image/image";
+import {AngularFireAuth} from "angularfire2/auth";
 
 
 @IonicPage()
@@ -28,6 +30,8 @@ export class PontoPage {
               private builder: FormBuilder,
               private viewCtrl: ViewController,
               private navParams: NavParams,
+              private imageSrv: ImageProvider,
+              private afAuth: AngularFireAuth,
               private database: AngularFireDatabase) {
 
     if (this.navParams.data.ponto) {
@@ -56,7 +60,7 @@ export class PontoPage {
   }
 
   close() {
-  this.viewCtrl.dismiss();
+    this.viewCtrl.dismiss();
   }
 
   abreCamera(){
@@ -67,7 +71,10 @@ export class PontoPage {
       mediaType: this.camera.MediaType.PICTURE
     };
     this.camera.getPicture(config).then((imageData) => {
-      this.ponto.itemImg = 'data:image/jpeg;base64,' + imageData;
+      let base64Image = 'data:image/jpeg;base64,' + imageData;
+
+      return this.imageSrv.uploadImage(base64Image, this.afAuth.auth.currentUser.uid);
+
     }, (err) => {
       console.log(err);
     });

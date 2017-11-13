@@ -8,7 +8,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import {AgmCoreModule} from '@agm/core';
+import {AgmCoreModule, GoogleMapsAPIWrapper} from '@agm/core';
 import { MyApp } from './app.component';
 import { Camera } from '@ionic-native/camera';
 import { Geolocation } from '@ionic-native/geolocation';
@@ -21,6 +21,8 @@ import {FormsModule} from "@angular/forms";
 import {SearchPipe} from "../pipes/search/search";
 import {TipoPontoPipe} from "../pipes/tipo-ponto/tipo-ponto";
 import {AgmJsMarkerClustererModule, ClusterManager} from "@agm/js-marker-clusterer";
+import {MapDirecrionsDirective} from "../directives/map-direcrions/map-direcrions";
+import { ImageProvider } from '../providers/image/image';
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import {AgmJsMarkerClustererModule, ClusterManager} from "@agm/js-marker-cluster
     RelatorioPage,
     SobrePage,
     SearchPipe,
-    TipoPontoPipe
+    TipoPontoPipe,
+    MapDirecrionsDirective
   ],
   imports: [
     BrowserModule,
@@ -60,8 +63,9 @@ import {AgmJsMarkerClustererModule, ClusterManager} from "@agm/js-marker-cluster
     AngularFireDatabase,
     Geolocation,
     ClusterManager,
+    GoogleMapsAPIWrapper,
+    ImageProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-
   ]
 })
 export class AppModule {}
