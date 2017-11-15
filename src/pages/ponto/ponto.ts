@@ -18,6 +18,9 @@ import {AngularFireAuth} from "angularfire2/auth";
 })
 export class PontoPage {
 
+  base64Image: any;
+  valor: any;
+
   formsModel: FormGroup;
   pontoKey: string;
 
@@ -71,10 +74,7 @@ export class PontoPage {
       mediaType: this.camera.MediaType.PICTURE
     };
     this.camera.getPicture(config).then((imageData) => {
-      let base64Image = 'data:image/jpeg;base64,' + imageData;
-
-      return this.imageSrv.uploadImage(base64Image, this.afAuth.auth.currentUser.uid);
-
+      this.base64Image = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
       console.log(err);
     });
@@ -88,6 +88,11 @@ export class PontoPage {
       } else {
         this.ponto.urlPonto = 'assets/marker/ponto-vermelho.png';
       }
+
+
+      this.valor = this.imageSrv.uploadImage(this.base64Image, this.afAuth.auth.currentUser.uid);
+
+      console.log(this.valor);
 
       this.ponto.itemLat = resp.coords.latitude;
       this.ponto.itemLog = resp.coords.longitude;
