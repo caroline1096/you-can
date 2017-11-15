@@ -3,6 +3,7 @@ import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 import { Component } from '@angular/core';
 import {IonicPage, ModalController, NavController} from 'ionic-angular';
 import {PontoPage} from "../ponto/ponto";
+import {ModalPage} from "../modal/modal-page";
 
 
 
@@ -29,7 +30,7 @@ export class RelatorioPage {
   }
 
   visualizar(ponto) {
-    let profileModal = this.navCtrl.create(PontoPage, { ponto: ponto });
+    let profileModal = this.navCtrl.create(ModalPage, { ponto: ponto });
     profileModal.present();
   }
 

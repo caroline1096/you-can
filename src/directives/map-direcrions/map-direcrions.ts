@@ -20,7 +20,7 @@ export class MapDirecrionsDirective {
         destination: this.destination,
         waypoints: [],
         optimizeWaypoints: true,
-        travelMode: 'DRIVING'
+        travelMode: 'WALKING'
       }, function(response, status) {
         if (status === 'OK') {
           directionsDisplay.setDirections(response);

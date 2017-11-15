@@ -23,6 +23,7 @@ import {TipoPontoPipe} from "../pipes/tipo-ponto/tipo-ponto";
 import {AgmJsMarkerClustererModule, ClusterManager} from "@agm/js-marker-clusterer";
 import {MapDirecrionsDirective} from "../directives/map-direcrions/map-direcrions";
 import { ImageProvider } from '../providers/image/image';
+import {ModalPage} from "../pages/modal/modal-page";
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { ImageProvider } from '../providers/image/image';
     SobrePage,
     SearchPipe,
     TipoPontoPipe,
+    ModalPage,
     MapDirecrionsDirective
   ],
   imports: [
@@ -55,6 +57,7 @@ import { ImageProvider } from '../providers/image/image';
     PontoPage,
     RelatorioPage,
     SobrePage,
+    ModalPage,
     ],
   providers: [
     StatusBar,

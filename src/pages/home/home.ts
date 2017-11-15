@@ -4,8 +4,8 @@ import {AngularFireDatabase, AngularFireList} from "angularfire2/database";
 import {Observable} from "rxjs/Observable";
 import {IonicPage} from "ionic-angular";
 import {ModalController} from 'ionic-angular';
-import {PontoPage} from "../ponto/ponto";
 import {MapDirecrionsDirective} from "../../directives/map-direcrions/map-direcrions";
+import {ModalPage} from "../modal/modal-page";
 
 
 @IonicPage()
@@ -48,7 +48,7 @@ export class HomePage {
   }
 
   clickedMarker(ponto) {
-    let profileModal = this.navCtrl.create(PontoPage, { ponto: ponto });
+    let profileModal = this.navCtrl.create(ModalPage, { ponto: ponto });
     profileModal.present();
   }
 }

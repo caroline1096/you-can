@@ -24,6 +24,7 @@
       <agm-marker *ngFor="let item of listaItem | async"
                   [latitude]="item.itemLat"
                   [longitude]="item.itemLog"
+                  [iconUrl]="''+item.urlPonto+''"
                   (markerClick)="clickedMarker(item)"
                   [openInfoWindow]="false"></agm-marker>
     </agm-marker-cluster>

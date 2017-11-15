@@ -1,13 +1,14 @@
 <ion-header  class="cabecalho"  style="background-color:#488aff">
-  <ion-grid>
-    <ion-row>
-      <button  (click)="close()" class="icone">
-        <ion-icon class="icon" name="md-arrow-dropleft-circle"></ion-icon>
-      </button>
-      <ion-title>Pontos</ion-title>
-    </ion-row>
-  </ion-grid>
+  <ion-buttons end>
+    <button menuToggle class="icone">
+      <ion-icon name="menu"  class="icon" ></ion-icon>
+    </button>
+    <ion-title text-left>
+      <ion-icon name="md-clipboard"></ion-icon>Pontos
+    </ion-title>
+  </ion-buttons>
 </ion-header>
+
 
 <ion-content class="texto">Cadastre somente pontos reais!</ion-content>
 <ion-content style="margin-top:10%">
@@ -45,7 +46,7 @@
       </button>
 
       <button [disabled]="!formsModel.valid"
-        ion-button block (click)="salvar()" type="submit"  ng-disabled="myForm.$invalid">
+        ion-button block (click)="salvar()" type="button"  ng-disabled="myForm.$invalid">
         Salvar
       </button>
     </div>

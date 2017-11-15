@@ -6,6 +6,7 @@ export class Ponto {
     public itemLog?: number,
     public itemImg?: string,
     public itemDesc?: string,
+    public urlPonto?: string,
     public itemData?: any,
   ) {}
 }

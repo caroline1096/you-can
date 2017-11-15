@@ -83,6 +83,11 @@ export class PontoPage {
 
   getPosiscaoAtual(){
     this.geolocation.getCurrentPosition().then((resp) => {
+      if (this.ponto.itemTipo === '1') {
+        this.ponto.urlPonto = 'assets/marker/ponto-azul.png';
+      } else {
+        this.ponto.urlPonto = 'assets/marker/ponto-vermelho.png';
+      }
 
       this.ponto.itemLat = resp.coords.latitude;
       this.ponto.itemLog = resp.coords.longitude;
