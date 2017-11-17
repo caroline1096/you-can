@@ -4,7 +4,7 @@ export class Ponto {
     public itemTipo?: string,
     public itemLat?: number,
     public itemLog?: number,
-    public itemImg?: string,
+    public itemImg?: any,
     public itemDesc?: string,
     public urlPonto?: string,
     public itemData?: any,
