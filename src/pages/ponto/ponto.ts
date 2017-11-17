@@ -62,7 +62,6 @@ export class PontoPage {
   }
 
 
-
   close() {
     this.viewCtrl.dismiss();
   }
@@ -77,6 +76,7 @@ export class PontoPage {
     this.camera.getPicture(config)
       .then((imageData) => {
         this.base64Image = 'data:image/jpeg;base64,' + imageData;
+        this.ponto.itemImg = this.base64Image;
       });
   }
 
@@ -87,7 +87,8 @@ export class PontoPage {
       } else {
         this.ponto.urlPonto = 'assets/marker/ponto-vermelho.png';
       }
-      this.ponto.itemImg = this.imageSrv.uploadImage(this.base64Image, this.afAuth.auth.currentUser.uid);
+
+      this.imageSrv.uploadImage(this.base64Image, this.afAuth.auth.currentUser.uid);
 
       this.ponto.itemLat = resp.coords.latitude;
       this.ponto.itemLog = resp.coords.longitude;
