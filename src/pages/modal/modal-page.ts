@@ -43,6 +43,8 @@ export class ModalPage {
       this.ponto.itemLat = this.navParams.data.ponto.itemLat;
       this.ponto.itemLocal = this.navParams.data.ponto.itemLocal;
       this.ponto.itemLog = this.navParams.data.ponto.itemLog;
+      this.ponto.itemImg = this.navParams.data.ponto.itemImg;
+      this.downloadImageUrls();
     } else {
       this.lista = this.database.list('/ponto').valueChanges();
       this.ponto = new Ponto();
@@ -78,6 +80,11 @@ export class ModalPage {
       console.log(err);
     });
 
+  }
+
+  downloadImageUrls() {
+    let promise = this.imageSrv.getImage(this.afAuth.auth.currentUser.uid, this.ponto.itemImg);
+    console.log(promise);
   }
 
   getPosiscaoAtual(){

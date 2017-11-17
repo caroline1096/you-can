@@ -61,7 +61,6 @@ export class PontoPage {
     });
   }
 
-
   close() {
     this.viewCtrl.dismiss();
   }
