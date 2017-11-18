@@ -1,14 +1,12 @@
-<ion-header  class="cabecalho"  style="background-color:#488aff">
-    <ion-buttons end>
-      <button menuToggle class="icone">
-        <ion-icon name="menu"  class="icon" ></ion-icon>
-      </button>
-      <ion-title text-left>
-          <ion-icon name="md-clipboard"></ion-icon>Relatório
-      </ion-title>
-    </ion-buttons>
-</ion-header>
+<ion-header  class="cabecalho" style="background-color:#006eca">
 
+  <ion-title>
+    <button menuToggle class="icone">
+      <ion-icon name="menu"  class="icon" ></ion-icon>
+    </button>Relatório
+  </ion-title>
+
+</ion-header>
 
 <ion-content>
   <ion-searchbar (ionInput)="searchFn($event)"></ion-searchbar>
@@ -20,13 +18,11 @@
             <ion-avatar item-start>
               <h2>{{item.itemImg}}</h2>
             </ion-avatar>
-            <ion-icon name="md-pin" item-left large ></ion-icon>
             <h2> {{item.itemLocal}}</h2>
           </ion-item>
 
 
           <ion-item>
-            <ion-icon name="wine" item-left large ></ion-icon>
             <h2>Tipo: {{item.itemTipo | tipoPonto }}</h2>
             <p>{{item.itemDesc}}</p>
           </ion-item>

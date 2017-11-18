@@ -1,34 +1,9 @@
 page-login {
+    .displayed {
+    margin-top: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
 
-   
-
-
-    h1{
-        
-        color: #0A0000;
-        text-align: center;
-        font-size: 50px;
-        padding-top: 50px;
-    }
-    h1 span {
-        font-family: 'Roboto';
-        font-size: 18px;
-        position: absolute;
-        margin-top: 55px;
-        margin-left: -35px;
-    }
-
-    .butto{
-        margin-left:39px;
-        margin-top: 8px;
-        width: 75%;
-        height: 6%;
-        border-radius: 3px;
-    
-    }
-    .link{
-        color: #FFFFFF;
-    }
-    
 }
 

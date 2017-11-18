@@ -1,21 +1,25 @@
-<ion-header  class="cabecalho" style="background-color:#488aff">
-  <ion-grid>
-    <ion-row>
-      <button  menuToggle class="icon">
-        <ion-icon class="icon" name="menu"></ion-icon>
-      </button>
-      <ion-title>Gerenciamento de rotas</ion-title>
-    </ion-row>
-  </ion-grid>
+<ion-header  class="cabecalho" style="background-color:#006eca">
+
+  <ion-title>
+    <button menuToggle class="icone">
+      <ion-icon name="menu"  class="icon" ></ion-icon>
+    </button>Gerencie a rota
+  </ion-title>
+
 </ion-header>
 
-<ion-content>
-  <ion-item>
-    <ion-label color="primary">Endereço:</ion-label>
-    <ion-input [(ngModel)]="valor" placeholder="Text Input"></ion-input>
+
+
+
+
+
+<ion-content class="bloco">
+  <ion-item class="bloco">
+    <ion-label color="dark">Endereço:</ion-label>
+    <ion-input [(ngModel)]="valor" placeholder="Digite o endereço"></ion-input>
   </ion-item>
 
-  <button ion-button (click)="getLatLan()" >Default</button>
+  <button ion-button (click)="getLatLan()" >ir</button>
 
   <agm-map [latitude]="latitude" [longitude]="longitude" >
     <google-map-directions [origin]="origin" [destination]="destination" ></google-map-directions>
@@ -30,4 +34,3 @@
     </agm-marker-cluster>
   </agm-map>
 </ion-content>
-<ion-header  class="rodape" style="background-color:#488aff">You can</ion-header>

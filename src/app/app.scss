@@ -15,20 +15,16 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 .cabecalho {
-    height: 55px;
- 
-    }
-  
-    .icone{
-    
-      background: #488aff;
+  height: 55px;
+  color: #ffffff;
+  text-decoration-color: #ffffff;
+  border-color: #fff;
+
+}
+
+.icone{
+      background: #006eca;
       border-color: #fff;
-      color: #fff;
-     
-    }
-    .rodape{
-      margin-top: 155%;
-      height: 55px;
-      text-align: center;
-      padding-top: 20px;
+      margin-top:2%;
+      height: 10%;
     }

@@ -1,16 +1,15 @@
-<ion-header  class="cabecalho"  style="background-color:#488aff">
-  <ion-buttons end>
+<ion-header  class="cabecalho" style="background-color:#006eca">
+
+  <ion-title>
     <button menuToggle class="icone">
       <ion-icon name="menu"  class="icon" ></ion-icon>
-    </button>
-    <ion-title text-left>
-      <ion-icon name="md-clipboard"></ion-icon>Pontos
-    </ion-title>
-  </ion-buttons>
+    </button>Ponto
+  </ion-title>
+
 </ion-header>
 
 
-<ion-content class="texto">Cadastre somente pontos reais!</ion-content>
+<ion-content class="texto"><b>Cadastre somente pontos reais!</b></ion-content>
 <ion-content style="margin-top:10%">
 
   <form class="list" [formGroup]="formsModel" (ngSubmit)="salvar()">
@@ -41,7 +40,6 @@
       <img src="{{base64Image}}">
 
       <button  type="button" ion-button icon-left block (click)="abreCamera()">
-        <ion-icon name="md-images"></ion-icon>
         Adicionar foto
       </button>
 
