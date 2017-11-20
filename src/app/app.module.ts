@@ -24,6 +24,7 @@ import {AgmJsMarkerClustererModule, ClusterManager} from "@agm/js-marker-cluster
 import {MapDirecrionsDirective} from "../directives/map-direcrions/map-direcrions";
 import { ImageProvider } from '../providers/image/image';
 import {ModalPage} from "../pages/modal/modal-page";
+import {Ionic2RatingModule} from "ionic2-rating";
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import {ModalPage} from "../pages/modal/modal-page";
     SearchPipe,
     TipoPontoPipe,
     ModalPage,
+
     MapDirecrionsDirective
   ],
   imports: [
@@ -47,7 +49,8 @@ import {ModalPage} from "../pages/modal/modal-page";
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     FormsModule,
-    AgmJsMarkerClustererModule
+    AgmJsMarkerClustererModule,
+    Ionic2RatingModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

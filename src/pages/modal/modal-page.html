@@ -9,47 +9,51 @@
   </ion-grid>
 </ion-header>
 
-<ion-content class="texto">Cadastre somente pontos reais!</ion-content>
-<ion-content style="margin-top:10%">
+<ion-content style="margin-top:10px">
 
-  <form class="list" [formGroup]="formsModel" (ngSubmit)="salvar()">
-    <ion-item padding-horizontal>
-      <ion-label floating>Nome do Local</ion-label>
-      <ion-input formControlName="nomeLocal" type="text" [(ngModel)]="ponto.itemLocal" ></ion-input>
-    </ion-item>
 
-    <ion-item>
-      <ion-label>Data</ion-label>
-      <ion-datetime formControlName="data" required displayFormat="MM/DD/YYYY"  [(ngModel)]="ponto.itemData"></ion-datetime>
-    </ion-item>
+  Cadastre somente pontos reais!
 
-    <ion-item padding-horizontal>
-      <ion-label>Tipo de Local</ion-label>
-      <ion-select [(ngModel)]="ponto.itemTipo" formControlName="tipoLocal" >
-        <ion-option value="1">Acessivel</ion-option>
-        <ion-option value="2">Não Acessivel</ion-option>
-      </ion-select>
-    </ion-item>
+  <ion-item padding-horizontal>
+    <ion-label floating>Nome do Local</ion-label>
+    <ion-input type="text" disabled [(ngModel)]="ponto.itemLocal" ></ion-input>
+  </ion-item>
 
-    <ion-item padding-horizontal>
-      <ion-label floating>Descrição</ion-label>
-      <ion-input formControlName="descricao" type="text"  name="nome"  [(ngModel)]="ponto.itemDesc" ></ion-input>
-    </ion-item>
+  <ion-item>
+    <ion-label>Data</ion-label>
+    <ion-datetime disabled displayFormat="MM/DD/YYYY"  [(ngModel)]="ponto.itemData"></ion-datetime>
+  </ion-item>
 
-    <div class="margin-buttom-ponto" padding-horizontal>
-      <img src="{{ponto.itemImg}}">
+  <ion-item padding-horizontal>
+    <ion-label>Tipo de Local</ion-label>
+    <ion-select [(ngModel)]="ponto.itemTipo" disabled  >
+      <ion-option value="1">Acessivel</ion-option>
+      <ion-option value="2">Não Acessivel</ion-option>
+    </ion-select>
+  </ion-item>
 
-      <button  type="button" ion-button icon-left block (click)="abreCamera()">
-        <ion-icon name="md-images"></ion-icon>
-        Adicionar foto
-      </button>
+  <ion-item padding-horizontal>
+    <ion-label floating>Descrição</ion-label>
+    <ion-input type="text"  name="nome" disabled  [(ngModel)]="ponto.itemDesc" ></ion-input>
+  </ion-item>
 
-      <button [disabled]="!formsModel.valid"
-              ion-button block (click)="salvar()" type="button"  ng-disabled="myForm.$invalid">
-        Salvar
-      </button>
-    </div>
+  <ion-item>
+    <img src="{{ponto.itemImg}}">
+  </ion-item>
+  <ion-item>
+    <ion-label>Avaliar local</ion-label>
+  </ion-item>
 
-  </form>
+  <rating [(ngModel)]="rate"
+          readOnly="false"
+          max="5"
+          emptyStarIconName="star-outline"
+          halfStarIconName="star-half"
+          starIconName="star"
+          nullable="false">
+  </rating>
+
+
+
 </ion-content>
-<ion-header  class="rodape" style="background-color:#488aff">You can </ion-header>
+<ion-header  class="rodape" style="background-color:#488aff">You can</ion-header>
