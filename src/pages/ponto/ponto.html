@@ -1,28 +1,22 @@
 <ion-header  class="cabecalho" style="background-color:#006eca">
-
   <ion-title>
     <button menuToggle class="icone">
       <ion-icon name="menu"  class="icon" ></ion-icon>
     </button>Ponto
   </ion-title>
-
 </ion-header>
-
 
 <ion-content class="texto"><b>Cadastre somente pontos reais!</b></ion-content>
 <ion-content style="margin-top:10%">
-
   <form class="list" [formGroup]="formsModel" (ngSubmit)="salvar()">
     <ion-item padding-horizontal>
       <ion-label floating>Nome do Local</ion-label>
       <ion-input formControlName="nomeLocal" type="text" [(ngModel)]="ponto.itemLocal" ></ion-input>
     </ion-item>
-
     <ion-item>
       <ion-label>Data</ion-label>
       <ion-datetime formControlName="data" required displayFormat="MM/DD/YYYY"  [(ngModel)]="ponto.itemData"></ion-datetime>
     </ion-item>
-
     <ion-item padding-horizontal>
       <ion-label>Tipo de Local</ion-label>
       <ion-select [(ngModel)]="ponto.itemTipo" formControlName="tipoLocal" >
@@ -30,24 +24,19 @@
         <ion-option value="2">Não Acessivel</ion-option>
       </ion-select>
     </ion-item>
-
     <ion-item padding-horizontal>
       <ion-label floating>Descrição</ion-label>
       <ion-input formControlName="descricao" type="text"  name="nome"  [(ngModel)]="ponto.itemDesc" ></ion-input>
     </ion-item>
-
     <div class="margin-buttom-ponto" padding-horizontal>
       <img src="{{base64Image}}">
-
-      <button  type="button" ion-button icon-left block (click)="abreCamera()">
+       <button  type="button" ion-button icon-left block (click)="abreCamera()">
         Adicionar foto
       </button>
-
       <button [disabled]="!formsModel.valid"
         ion-button block (click)="salvar()" type="button"  ng-disabled="myForm.$invalid">
         Salvar
       </button>
     </div>
-
   </form>
 </ion-content>
