@@ -41,7 +41,7 @@ export class HomePage {
       google.maps.event.addListener(autocomplete, 'place_changed', () => {
         this.ngZone.run(() => {
           //get the place result
-          let place:google.maps.places.PlaceResult=autocomplete.getPlace();
+          let place: google.maps.places.PlaceResult=autocomplete.getPlace();
 
           //verify result
           if (place.geometry === undefined || place.geometry === null) {
